@@ -1,0 +1,6 @@
+{
+  "name": "Boon Huat Invoice Assistant",
+  "description": "AI Invoice Processing Assistant for Boon Huat Hardware & Supplies Pte Ltd to extract invoice data, cross-check POs and GRNs, and log entries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
