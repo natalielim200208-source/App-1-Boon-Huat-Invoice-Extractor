@@ -176,27 +176,7 @@ export default function App() {
     }
   };
 
-  const handleClearInvoiceLog = async () => {
-    if (
-      !window.confirm(
-        'Are you sure you want to clear all data rows from the "Invoice Log" tab in Google Sheets? The header row will be kept intact.'
-      )
-    ) {
-      return;
-    }
-
-    const activeSheetId = sheetId || localStorage.getItem('bh_google_sheet_id') || TARGET_SPREADSHEET_ID;
-    const activeToken = accessToken || (await getValidAccessToken());
-
-    if (activeToken && activeSheetId) {
-      try {
-        await clearInvoiceLogRows(activeToken, activeSheetId);
-        await refreshSheetData(activeToken, activeSheetId);
-      } catch (err: any) {
-        console.error('Failed to clear Invoice Log in Google Sheets:', err);
-        alert(`Failed to clear Invoice Log: ${err.message}`);
-      }
-    }
+  const handleClearInvoiceLog = () => {
     setInvoiceLog([]);
   };
 
